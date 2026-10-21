@@ -9,8 +9,8 @@
  */
 
 import { Detail, getPreferenceValues, getSelectedFinderItems, showToast, Toast } from "@raycast/api";
+import AdmZip from "adm-zip";
 import crypto from "crypto";
-import { execaCommand, ExecaError } from "execa";
 import { fileTypeFromFile } from "file-type";
 import fs from "fs";
 import path from "path";
@@ -63,7 +63,7 @@ export default function RunCommand(actionType: ActionType) {
 
   const { showMD5Log, zipPassword, enableZipPassword, enableVideo, enableAudio, enableImage } =
     getPreferenceValues<Preferences>();
-  const password = zipPassword.trim();
+  const password = String(zipPassword ?? "").trim();
   const enableTypes: MediaType[] = [];
   if (enableVideo) {
     enableTypes.push(MediaType.Video);
@@ -238,26 +238,18 @@ export default function RunCommand(actionType: ActionType) {
     console.log(`zipFilePath: ${zipFilePath}`);
     if (zipFilePath) {
       const uniqueZipFilePath = getUniqueFilePath(zipFilePath);
-      const dir = path.dirname(uniqueZipFilePath);
       const zipFileName = path.basename(uniqueZipFilePath);
 
-      if (process.platform === "win32") {
-        if (enableZipPassword && password.length > 0) {
-          throw new Error("Password-protected zip is not supported on Windows. Please use a third-party tool.");
-        }
-        const sourcePaths = selectedFileNames.map((name) => `'${path.join(dir, name)}'`).join(", ");
-        const cmd = `powershell -Command "Compress-Archive -Path ${sourcePaths} -DestinationPath '${uniqueZipFilePath}'"`;
-        console.log(`zip cmd: ${cmd}`);
-        await execaCommand(cmd, { shell: true });
-      } else {
-        let cmd = "zip -r ";
-        if (enableZipPassword && password.length > 0) {
-          cmd += `-P '${password}' `;
-        }
-        cmd += `'${zipFileName}'  '${selectedFileNames.join("' '")}'`;
-        console.log(`zip cmd: ${cmd}`);
-        await execaCommand(cmd, { shell: true, cwd: dir });
+      if (enableZipPassword && password.length > 0) {
+        throw new Error("Encrypted zip archives are not yet supported consistently on Windows and macOS.");
       }
+      const archive = new AdmZip();
+      for (const filePath of filePaths) {
+        const stat = fs.statSync(filePath);
+        if (stat.isDirectory()) archive.addLocalFolder(filePath, path.basename(filePath));
+        else archive.addLocalFile(filePath);
+      }
+      archive.writeZip(uniqueZipFilePath);
 
       const zipCompressLog = `#### Zip Compressed to File: \`${zipFileName}\` \n\n`;
       setMarkdown((prev) => prev + zipCompressLog);
@@ -303,43 +295,24 @@ export default function RunCommand(actionType: ActionType) {
     const markdown = selectedFileNames.map((fileName) => `- \`${fileName}\` \n\n`).join("");
     setMarkdown((prev) => prev + markdown);
 
-    const dir = path.dirname(targetPath);
     const extractedFileName = path.basename(targetPath);
-    const extractFileCommands = zipFilePaths.map((zipPath) => {
-      if (process.platform === "win32") {
-        if (enableZipPassword && password.length > 0) {
-          throw new Error(
-            "Password-protected zip extraction is not supported on Windows. Please use a third-party tool.",
-          );
-        }
-        const cmd = `powershell -Command "Expand-Archive -Path '${zipPath}' -DestinationPath '${targetPath}'"`;
-        console.log(`unzip cmd: ${cmd}`);
-        return execaCommand(cmd, { shell: true });
-      } else {
-        const fileName = path.basename(zipPath, ".zip");
-        let cmd = `unzip -d '${extractedFileName}' `;
-        if (enableZipPassword && password.length > 0) {
-          cmd += `-P '${password}' `;
-        }
-        cmd += `'${fileName}' `;
-        console.log(`unzip cmd: ${cmd}`);
-        return execaCommand(cmd, { shell: true, cwd: dir });
-      }
-    });
 
     try {
-      await Promise.all(extractFileCommands);
+      if (enableZipPassword && password.length > 0) {
+        throw new Error("Encrypted zip archives are not yet supported consistently on Windows and macOS.");
+      }
+      for (const zipPath of zipFilePaths) new AdmZip(zipPath).extractAllTo(targetPath, true);
       const extractLog = `#### Zip Extracted to File: \`${extractedFileName}\` \n\n`;
       setMarkdown((prev) => prev + extractLog);
       console.log(extractLog);
     } catch (error) {
       fs.rmdirSync(targetPath);
 
-      const err = error as ExecaError;
+      const err = error instanceof Error ? error : new Error(String(error));
       console.error(`ZipExtract error: ${JSON.stringify(err, null, 4)}`);
       let errorLog = `### ⚠️ Error \n\n `;
       errorLog += `\`\`\` \n\n`;
-      errorLog += `${err.stderr ?? err.message} \n\n`;
+      errorLog += `${err.message} \n\n`;
       errorLog += `\`\`\` \n\n`;
       setMarkdown((prev) => prev + errorLog);
     }
@@ -393,38 +366,21 @@ function appendStringToFile(filePath: string, str: string): Promise<void> {
 }
 
 async function removeStringFromFile(filePath: string, str: string): Promise<void> {
-  if (process.platform === "win32") {
-    const escaped = str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const cmd = `powershell -Command "(Get-Content '${filePath}' -Raw) -replace '${escaped}$','' | Set-Content '${filePath}' -NoNewline"`;
-    await execaCommand(cmd, { shell: true });
-  } else {
-    const cmd = `LC_CTYPE=C sed -i '' '$s/${str}//g' '${filePath}'`;
-    await execaCommand(cmd, { shell: true });
+  const contents = fs.readFileSync(filePath);
+  const suffix = Buffer.from(str);
+  if (contents.length >= suffix.length && contents.subarray(contents.length - suffix.length).equals(suffix)) {
+    fs.writeFileSync(filePath, contents.subarray(0, contents.length - suffix.length));
   }
   console.log(`removeFileString done: ${filePath}`);
 }
 
 /**
- * Get the md5 hash of a file using a platform-appropriate command.
- * Falls back to the cross-platform md5File2 on Windows.
+ * Get the md5 hash of a file with the cross-platform Node.js crypto implementation.
  */
 async function md5File(filePath: string): Promise<string> {
   console.log(`md5 of file: ${path.basename(filePath)}`);
 
-  if (process.platform === "win32") {
-    return md5File2(filePath);
-  }
-
-  const env = process.env;
-  env.PATH = "/usr/sbin:/usr/bin:/bin:/sbin:/sbin/md5";
-
-  const cmd = `md5 -q '${filePath}'`;
-  const result = await execaCommand(cmd, { shell: true });
-  const md5 = result.stdout;
-  console.log(`md5: ${md5}`);
-  delete env.PATH;
-
-  return md5;
+  return md5File2(filePath);
 }
 
 /**

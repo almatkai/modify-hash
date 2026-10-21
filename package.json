@@ -3,7 +3,7 @@
   "name": "modify-hash",
   "title": "Modify Hash",
   "description": "Batch modify the hash of media files, which can be simply used for uploading online disk to prevent censorship.",
-  "icon": "hasher.png",
+  "icon": "assets/hasher.png",
   "author": "almatkai",
   "contributors": [
     "0xdhrv"
@@ -51,7 +51,7 @@
       "name": "zipCompress",
       "title": "Zip Compress",
       "subtitle": "Files",
-      "description": "Compress files to zip with password.",
+      "description": "Compress files to a portable zip archive.",
       "mode": "view",
       "platforms": [
         "macOS",
@@ -62,7 +62,7 @@
       "name": "zipExtract",
       "title": "Zip Extract",
       "subtitle": "Zip Files",
-      "description": "Extract files from zip with password.",
+      "description": "Extract files from a portable zip archive.",
       "mode": "view",
       "platforms": [
         "macOS",
@@ -82,10 +82,10 @@
     {
       "label": "Enable Zip Password",
       "name": "enableZipPassword",
-      "description": "Enable zip compress and extract with password.",
+      "description": "Reserved for future encrypted-archive support; portable zip commands currently use no password.",
       "type": "checkbox",
       "required": false,
-      "default": true
+      "default": false
     },
     {
       "title": "Zip Password",
@@ -123,10 +123,11 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.104.1",
-    "execa": "^9.6.1",
+    "adm-zip": "^0.5.16",
     "file-type": "^21.3.0"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
