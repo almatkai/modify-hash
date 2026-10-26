@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 3,
+  "id": "com.tezbar.native.modify-hash",
+  "slug": "modify-hash",
+  "name": "Modify Hash",
+  "version": "0.2.0",
+  "description": "Modify or restore media hashes and compress or extract portable ZIP archives.",
+  "icon": "resources/hasher.png",
+  "runtime": "rust",
+  "execution": "process",
+  "protocolVersion": 1,
+  "repository": "https://github.com/almatkai/modify-hash",
+  "author": "almatkai",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "commands": [
+    {
+      "name": "modifyHash",
+      "title": "Modify Hash",
+      "subtitle": "Media Files",
+      "description": "Batch modify the hash of media files.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "icon": "resources/hasher.png",
+      "runtime": "rust",
+      "refreshMs": null,
+      "concurrency": "serialize",
+      "timeoutMs": 300000
+    },
+    {
+      "name": "restoreHash",
+      "title": "Restore Hash",
+      "subtitle": "Media Files",
+      "description": "Batch restore the hash of media files.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "icon": "resources/hasher.png",
+      "runtime": "rust",
+      "refreshMs": null,
+      "concurrency": "serialize",
+      "timeoutMs": 300000
+    },
+    {
+      "name": "zipCompress",
+      "title": "Zip Compress",
+      "subtitle": "Files",
+      "description": "Compress files to a portable zip archive.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "icon": "resources/hasher.png",
+      "runtime": "rust",
+      "refreshMs": null,
+      "concurrency": "serialize",
+      "timeoutMs": 300000
+    },
+    {
+      "name": "zipExtract",
+      "title": "Zip Extract",
+      "subtitle": "Zip Files",
+      "description": "Extract files from a portable zip archive.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "icon": "resources/hasher.png",
+      "runtime": "rust",
+      "refreshMs": null,
+      "concurrency": "serialize",
+      "timeoutMs": 300000
+    }
+  ],
+  "preferences": [
+    {
+      "label": "Show MD5 Log",
+      "name": "showMD5Log",
+      "description": "Show modify file md5 log by default, turn off it can save time when there are large video files.",
+      "type": "checkbox",
+      "required": false,
+      "default": true
+    },
+    {
+      "label": "Enable Zip Password",
+      "name": "enableZipPassword",
+      "description": "Reserved for future encrypted-archive support; portable zip commands currently use no password.",
+      "type": "checkbox",
+      "required": false,
+      "default": false
+    },
+    {
+      "title": "Zip Password",
+      "name": "zipPassword",
+      "description": "Password for zip compress and extract.",
+      "type": "textfield",
+      "required": false,
+      "default": "1024"
+    },
+    {
+      "title": "Enable to Modify the Type of Media Files",
+      "name": "enableVideo",
+      "label": "Video",
+      "description": "Enable to modify the hash of video files.",
+      "type": "checkbox",
+      "required": false,
+      "default": true
+    },
+    {
+      "name": "enableAudio",
+      "label": "Audio",
+      "description": "Enable to modify the hash of audio files.",
+      "type": "checkbox",
+      "required": false,
+      "default": false
+    },
+    {
+      "name": "enableImage",
+      "label": "Image",
+      "description": "Enable to modify the hash of image files.",
+      "type": "checkbox",
+      "required": false,
+      "default": false
+    }
+  ],
+  "replaces": [
+    "com.tezbar.modify-hash",
+    "raycast.modify-hash"
+  ],
+  "capabilities": [
+    "selection.read"
+  ],
+  "artifacts": {},
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Real OS/GUI acceptance not run. Host prerequisites and catalog/acquisition remain unapplied."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "Real OS/GUI acceptance not run. Host prerequisites and catalog/acquisition remain unapplied."
+    }
+  ]
+}

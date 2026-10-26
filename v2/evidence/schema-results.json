@@ -1,0 +1,5 @@
+{
+  "valid": 1,
+  "negativeCases": 16,
+  "validator": "stdlib evaluator of all assertion keywords used by unchanged pinned schema; no general metaschema certification"
+}

@@ -34,3 +34,5 @@ But sometimes, just modifying the hash of the file is not enough to bypass censo
 ### Zip Extract
 
 ![modify-hash-6](https://raw.githubusercontent.com/tisfeng/ImageBed/main/uPic/modify-hash-6-1666884159.png)
+
+Rust V2 standalone development port and review instructions: [v2/README.md](v2/README.md).

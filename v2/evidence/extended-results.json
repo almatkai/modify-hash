@@ -1,0 +1,489 @@
+{
+  "checks": {
+    "hello": 3,
+    "initialize": 3,
+    "locked-file-type-parity": 78,
+    "recursive-and-overlap": 1,
+    "ordinary-punctuation": 1,
+    "destination-readonly": 1,
+    "crc-rejection": 1,
+    "cross-archive-conflict": 1,
+    "zip64-local-header": 1,
+    "password-form-error": 2,
+    "concurrent-same-token": 1,
+    "concurrent-other-session": 1,
+    "shutdown": 1,
+    "eof-stage-cleanup": 1,
+    "frame-cap": 1
+  },
+  "parity": [
+    {
+      "fixture": "bmp",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ac3",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "gif",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jxr",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jpg",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "flif",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "psd",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mpc7",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mpc8",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "aif",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "icns",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mid",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "dsf",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "flac",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "bpg",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "wv",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ape",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "amr",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "flv",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "it",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "xcf",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ktx",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "j2c",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jxl",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "raf",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "xm",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "voc",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mp3",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "aac",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mpg",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ico",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "cur",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-isom",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-M4A",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-M4B",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-F4A",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-F4B",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-avif",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-heic",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-mif1",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-crx",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-qt",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "brand-3gp4",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "avi",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "wav",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "webp",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "qcp",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "opus",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ogg",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ogv",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "spx",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "ogx",
+      "expected": "application",
+      "state": "skipped",
+      "matched": true
+    },
+    {
+      "fixture": "text",
+      "expected": null,
+      "state": "skipped",
+      "matched": true
+    },
+    {
+      "fixture": "bad-id3",
+      "expected": null,
+      "state": "failed",
+      "matched": true
+    },
+    {
+      "fixture": "utf16",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "png",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "big-tiff",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "tiff",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "webm",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mkv",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "asf-audio",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "asf-video",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "mts",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "bdav",
+      "expected": "video",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jls",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "cr2",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "nef",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "tiff-be",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "orf",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "rw2",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "dwg",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jp-jp2",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jp-jpx",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jp-jpm",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "jp-mjp2",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "id3-mp3",
+      "expected": "audio",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "bom-gif",
+      "expected": "image",
+      "state": "committed",
+      "matched": true
+    },
+    {
+      "fixture": "xml-utf16",
+      "expected": "application",
+      "state": "skipped",
+      "matched": true
+    }
+  ]
+}

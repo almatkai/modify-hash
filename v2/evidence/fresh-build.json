@@ -1,0 +1,19 @@
+{
+  "exitCode": 0,
+  "cargoHome": "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/modify-hash/v2/.qa/fresh-b57c93d17c88403c8eb7da0acfe0858f-cargo-home",
+  "targetDir": "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/modify-hash/v2/.qa/fresh-b57c93d17c88403c8eb7da0acfe0858f-target",
+  "binary": "/Users/almat/Desktop/code/Tezbar APP/rust-extension-ports/modify-hash/v2/.qa/fresh-b57c93d17c88403c8eb7da0acfe0858f-target/release/modify-hash-v2",
+  "sdk": "https://github.com/almatkai/tezbar-extension-sdk-rust",
+  "revision": "e955911f0bf5b558f9d3eb5183df0adc95c22af2",
+  "locked": true,
+  "sourceHashes": {
+    "Cargo.toml": "f04ef065bbaa1fe59bb63daa7a83b5682e8a129fabdcd92ac598e2ec79879ec7",
+    "Cargo.lock": "40fd11269c7a0d9c07bece8e6f10563c63a3b492de50c79c0a7dc944fd430fd3",
+    "src/core.rs": "7f2b46ac1f24ee035f0810a737dd9b3f3dc46f7ed112bbd092e0aa90c97fed2e",
+    "src/safe_fs.rs": "a48b18ed76ab710ee57801449cf48683c7c651ffe6ccfa6e3de283079d79eb70",
+    "src/lib.rs": "bd9f5a45a6cbb768cf5b3548d0216b7ae020f7af73881b56035025b6693d8736",
+    "src/media.rs": "1a3974b4c8cab9f309ffb9d47a81885edb08559d6e935b5e73eb7f0d4f35e58e",
+    "src/main.rs": "14ab24abec32968cae10015245edffd0d39ad313d0182c592d0132486eeca767"
+  },
+  "binarySha256": "c73a7175056dd9202cf5edc6df6f62820c9d3fc61cb86174ce8716d461a277ed"
+}
