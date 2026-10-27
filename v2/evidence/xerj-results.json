@@ -1,0 +1,28 @@
+{
+  "prefix": "ax-8a09adc077e6",
+  "coverage": "incomplete; use full reads/rg/Git/hashes",
+  "exitCodes": {
+    "autoindex": -15,
+    "search": 1
+  },
+  "round2": [
+    {
+      "operation": "autoindex",
+      "prefix": "ax-8a09adc077e6",
+      "exitCode": 3,
+      "result": "completed with refused docs mapping: title keyword-to-text conflict; 141 files refused; all 41 detected source files unindexed; 5 datasets/252 records committed in 17.6s"
+    },
+    {
+      "operation": "search",
+      "prefix": "ax-8a09adc077e6",
+      "exitCode": 1,
+      "result": "HTTP 400 strict unknown defs field"
+    },
+    {
+      "operation": "post-change autoindex",
+      "prefix": "ax-8a09adc077e6",
+      "exitCode": 1,
+      "result": "aborted in 0.3s: frozen dataset cannot accept FILE_HASHES.json field schema; unsupported dataset/schema evolution; no suggested alternate-prefix workaround attempted"
+    }
+  ]
+}

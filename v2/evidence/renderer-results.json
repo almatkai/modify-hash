@@ -1,0 +1,39 @@
+{
+  "checks": [
+    "pinned Form parser and default reconciliation",
+    "controlled Form fields accept server revisions",
+    "patched full draft A B invalid A preserves all seven fields",
+    "actual patched onChange and submit snapshot producers",
+    "actual React pending selection unedited admission and stale reconciliation",
+    "actual React pending selection A/B/A and stale reconciliation",
+    "actual React pending selection INVALID/[\"/synthetic/typed\"] and stale reconciliation",
+    "actual React pending selection PREFERENCE and stale reconciliation",
+    "actual React repeated explicit selection, preferences, new-batch and retired-owner fencing",
+    "actual pinned surface overlay, selection snapshot and no submit fallback",
+    "pinned List parser action filtering",
+    "pinned Detail markdown parser",
+    "actual Finder script removes silent truncation before host rejection; directory validation retained",
+    "extracted production + actual React untouched ownership and latest submit",
+    "extracted production + actual React paths-and-preference ownership and latest submit",
+    "extracted production + actual React A-B-A ownership and latest submit",
+    "extracted production + actual React invalid-valid ownership and latest submit",
+    "extracted production + actual React preference ownership and latest submit",
+    "extracted production + actual React repeated ownership and latest submit",
+    "extracted production + actual React error ownership and latest submit",
+    "extracted production + actual React cancel ownership and latest submit"
+  ],
+  "sourceHashes": {
+    "form-runtime.tsx": "8568d0ac5be03eea97d0def38067dbbbdce5ae97c36a51024857ef20dce299a6",
+    "list-runtime.tsx": "c7e253c34ce6e0a5132cab96bf1f0388393faca79ff57c3fdc7956f377a0ab0f",
+    "detail-runtime.tsx": "32eecb50891e0f282bd3d78d8a38193ec24540bf70c3fdc8e43a1d368c97d54c",
+    "index.tsx": "7fc8413a72b92e8f88b0939cd93f91624018fe0765baa1e71b38b86f8cc77a64"
+  },
+  "windowsProducer": "extracted/static-reviewed; PowerShell execution not-run",
+  "gui": "not-run",
+  "productionBinarySha256": "c73a7175056dd9202cf5edc6df6f62820c9d3fc61cb86174ce8716d461a277ed",
+  "patchedSourceHashes": {
+    "form-runtime.tsx": "6ab94985d5ef5cd8734a5c8a3692e43e3796a81f54080b5d499cd08d8b23143e",
+    "index.tsx": "33893d0dfebe8498ffe85d5396b61e346ec994d3471338602cf4a17c2542c40b"
+  },
+  "adapterSourceSha256": "bd9f5a45a6cbb768cf5b3548d0216b7ae020f7af73881b56035025b6693d8736"
+}

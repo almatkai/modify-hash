@@ -1,0 +1,22 @@
+Modify Hash V2 0.2.0 — development, uninstalled review package.
+
+Derived from almatkai/modify-hash at 3fdbb4822b6d9892bfbb685094a3e8a7b69270f0,
+Copyright (c) 2022 Tisfeng, under the unchanged MIT LICENSE.
+The four own portable V1 command sources are authoritative. Raycast's older
+command implementation was not substituted. The icon is byte-identical to
+raycast/extensions 6734d85992290066fd31a7f5bee3cca3d3545a1a,
+extensions/modify-hash/assets/hasher.png; SHA256:
+df59209ea6d50585d5fca4214ae616ce98c3bfb824b0b5fc79ab2f8063c94fc5.
+
+Media category rules are translated from locked file-type 21.3.4 (MIT).
+file-type's authentic license is included, alongside the V1 oracle's AdmZip
+0.5.18 license. Node/React/AdmZip are not runtime dependencies of this binary.
+
+The standalone tezbar-extension-sdk 0.1.1 is Apache-2.0, immutable HTTPS Git
+revision e955911f0bf5b558f9d3eb5183df0adc95c22af2. Its authentic LICENSE and
+NOTICE and the actual license evidence for the complete locked Cargo graph
+(including inactive targets) are included in resources/licenses in the ZIP.
+Source evidence lives in licenses/ and evidence/dependency-licenses.json.
+No new grants or ownership are asserted for third-party works. This inventory
+is source evidence, not a legal review. The main application and SDK are not
+modified, bundled as applications, or installed by this package.

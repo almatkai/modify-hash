@@ -1,0 +1,65 @@
+{
+  "file-type": {
+    "lock": {
+      "version": "21.3.4",
+      "resolved": "https://registry.npmjs.org/file-type/-/file-type-21.3.4.tgz",
+      "integrity": "sha512-Ievi/yy8DS3ygGvT47PjSfdFoX+2isQueoYP1cntFW1JLYAuS4GD7NUPGg4zv2iZfV52uDyk5w5Z0TdpRS6Q1g==",
+      "license": "MIT",
+      "dependencies": {
+        "@tokenizer/inflate": "^0.4.1",
+        "strtok3": "^10.3.4",
+        "token-types": "^6.1.1",
+        "uint8array-extras": "^1.4.0"
+      },
+      "engines": {
+        "node": ">=20"
+      },
+      "funding": {
+        "url": "https://github.com/sindresorhus/file-type?sponsor=1"
+      }
+    },
+    "files": {
+      "core.d.ts": "d757f5fec81075c2bb10d493208c089dad3a48dda1e9554909648f53d3eb81aa",
+      "core.js": "f528e3f8b5472fd2af534c678741c72e00f06be07896da5834bdc3cfd6597362",
+      "index.d.ts": "bb728f50b8f7421dfca8b993f925fc1fa3c2a9c0eae93afeffdbcb02ae7b33b9",
+      "index.js": "0fc881f41231a6e387e6dedfc4a0aff2ac07589888d4ffb011e17ad77f90f2e2",
+      "license": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3",
+      "package.json": "1f3a56f9acc26acb7aa40d79e23d7489bdbb795e41d5baed24d104ab49fe6e65",
+      "readme.md": "801a51e7c099d1bf0a8f7dae8a50fa5a575d98c702a5aa868dcc29b14f71d548",
+      "supported.js": "649d52db70e0098ef626a5f858cfa8d78e50224851ba69173b9a0995c2e0f7ed",
+      "util.js": "376a4e7dda836aa96705f8f4795e8d2eea38ba0d77b5aa24cb9ea3f13ae1b6b0"
+    }
+  },
+  "adm-zip": {
+    "lock": {
+      "version": "0.5.18",
+      "resolved": "https://registry.npmjs.org/adm-zip/-/adm-zip-0.5.18.tgz",
+      "integrity": "sha512-ufJnssQGbxzLNS1Ho9bCtX4rQKCCvoVuDLHoJyc3F9dOGDB4BkWs2Ci0kv53lqocAEQ/Cbi+I2XCsNYGqVYqng==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=12.0"
+      }
+    },
+    "files": {
+      "LICENSE": "6bb5b2d4c07d793ca928daa63a8899c6914fafb5ac3aa04ec10cae07f3d57dca",
+      "README.md": "9d05e156889b1475cdee97a13ed84a4abee0d752b2aaa28ded5359fcf45df901",
+      "adm-zip.js": "ddc2c82e58df0054ab2f55153c09435ede4ff593b29747e850d3d22fb6eaba97",
+      "headers/entryHeader.js": "6ed1ec82e6124d71dbfb4ee6e5dd4c975657854354cf74741427a1862010a664",
+      "headers/index.js": "536e4b5bf009a3d9f6eccfbbc4157cb6de663d889e0826ea5f6e5fa17aaeb8bf",
+      "headers/mainHeader.js": "ed5a2b3fc7c8a6937e07447eb3e55e08a0655d2f24fe04039e7008845d221a25",
+      "methods/deflater.js": "6dc41b2460594cfa5136b797653c166b2f7403820a40f2fca17cca35a5de1b5f",
+      "methods/index.js": "d67714f1a04be942f90be77069af3ff4214aa8ee84b26edeff3a87eb0d8e2dc0",
+      "methods/inflater.js": "7b62c190669eeefd6b2810a3339d9109ecb219f845fcd12ae93518beec35dc49",
+      "methods/zipcrypto.js": "23365c7eda0ea098385dc7ec649517fc110ce2764d2e707c37bf6b528604e25a",
+      "package.json": "6fd3269ff43d7d95244725c6e80e00478a0022b87a2cf22a97441a3c8164af25",
+      "util/constants.js": "208e943a2e5faad056047f3c7991cce3cde637d8e272a564f2546210ebdf2069",
+      "util/decoder.js": "73a0ebb00c4dce2124f07acf0b34374cb03a4384cccd1cd6f58aee27c35953d9",
+      "util/errors.js": "d2d243647737c795c2db8aeba2e1f3841d5f76370b521d436cf465322dd4aab7",
+      "util/fattr.js": "31c93eb386a2bfbf19ad92a6bf20d510a8f1e7e90cc71d33dd888f89da12362d",
+      "util/index.js": "dc5b230ed853947ea55c0bf69f0e525fbeffefff09aa3da296d541bb8898314e",
+      "util/utils.js": "f29e31d27e9227320f340fcfb48c1a131e493e1e66139e018a232e6c943f73f0",
+      "zipEntry.js": "61b6fcc1675725efbd7f0bc7c17529806bd3819b43e3794ffd067eeb7bb88e5c",
+      "zipFile.js": "902be71d948e9daa6823f3df7df7254826c15fec9f03d46b92ef35e54e87cb86"
+    }
+  }
+}

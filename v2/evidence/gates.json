@@ -1,0 +1,10 @@
+{
+  "fmt": 0,
+  "stable-test": 0,
+  "stable-clippy": 0,
+  "msrv-test": 0,
+  "msrv-clippy": 0,
+  "windows-check": 0,
+  "windows-clippy": 0,
+  "release": 0
+}

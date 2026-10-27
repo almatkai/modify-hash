@@ -1,0 +1,45 @@
+{
+  "commit": "ea100cee3f69711de12485ba061950c5fc65258f",
+  "path": "src-tauri/src/native_core/extensions/loved_extensions.json",
+  "fullObjectSha256": "f30e521b2c1b196301d81502478732d506a50ed975a54f179ed077a687ca5537",
+  "gitBlob": "5404afe29f8c9c0b89f94f45341aebdb2eabd530",
+  "row": [
+    {
+      "id": "raycast.modify-hash",
+      "name": "Modify Hash",
+      "description": "Batch modify the hash of media files, which can be simply used for uploading online disk to prevent censorship.",
+      "author": "almatkai",
+      "owner": "almatkai",
+      "version": "0.1.0",
+      "repository": "https://github.com/almatkai/modify-hash",
+      "iconUrl": "https://raw.githubusercontent.com/almatkai/modify-hash/main/assets/hasher.png",
+      "categories": [
+        "Developer Tools",
+        "Productivity"
+      ],
+      "commands": [
+        {
+          "name": "modifyHash",
+          "title": "Modify Hash",
+          "description": "Batch modify the hash of media files."
+        },
+        {
+          "name": "restoreHash",
+          "title": "Restore Hash",
+          "description": "Batch restore the hash of media files."
+        },
+        {
+          "name": "zipCompress",
+          "title": "Zip Compress",
+          "description": "Compress files to a portable zip archive."
+        },
+        {
+          "name": "zipExtract",
+          "title": "Zip Extract",
+          "description": "Extract files from a portable zip archive."
+        }
+      ],
+      "runtime": "javascript"
+    }
+  ]
+}
